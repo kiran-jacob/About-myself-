@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kiran Jacob | AI Developer Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#050505;
+color:white;
+overflow-x:hidden;
+}
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
+}
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+padding:18px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,.75);
+backdrop-filter:blur(12px);
+z-index:1000;
+}
+
+.logo{
+font-size:28px;
+font-weight:700;
+color:#00e5ff;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:25px;
+}
+
+nav ul li a{
+color:white;
+text-decoration:none;
+transition:.3s;
+}
+
+nav ul li a:hover{
+color:#00e5ff;
+}
+
+section{
+min-height:100vh;
+padding:120px 10%;
+}
+
+.hero{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:60px;
+flex-wrap:wrap;
+}
+
+.profile{
+width:320px;
+height:320px;
+border-radius:50%;
+object-fit:cover;
+border:5px solid #00e5ff;
+box-shadow:0 0 40px rgba(0,229,255,.5);
+transition:.4s;
+}
+
+.profile:hover{
+transform:scale(1.05);
+box-shadow:0 0 60px rgba(0,229,255,.8);
+}
+
+.hero-text h1{
+font-size:4rem;
+}
+
+.hero-text span{
+color:#00e5ff;
+}
+
+.typing{
+font-size:1.5rem;
+margin-top:10px;
+color:#bdbdbd;
+height:40px;
+}
+
+.hero-text p{
+margin-top:15px;
+line-height:1.8;
+max-width:650px;
+}
+
+.btn{
+display:inline-block;
+margin-top:25px;
+padding:12px 30px;
+background:#00e5ff;
+color:black;
+font-weight:600;
+text-decoration:none;
+border-radius:30px;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+}
+
+h2{
+font-size:2.5rem;
+margin-bottom:30px;
+color:#00e5ff;
+}
+
+.glass{
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,.1);
+padding:25px;
+border-radius:20px;
+margin-top:20px;
+transition:.4s;
+}
+
+.glass:hover{
+transform:translateY(-8px);
+box-shadow:0 0 25px rgba(0,229,255,.3);
+}
+
+.skills{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.skill-bar{
+margin-top:15px;
+}
+
+.skill-bar p{
+margin-bottom:8px;
+}
+
+.progress{
+height:10px;
+background:#222;
+border-radius:20px;
+overflow:hidden;
+}
+
+.progress div{
+height:100%;
+background:#00e5ff;
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.stat{
+text-align:center;
+}
+
+.stat h1{
+font-size:3rem;
+color:#00e5ff;
+}
+
+.timeline{
+border-left:3px solid #00e5ff;
+padding-left:20px;
+}
+
+.timeline .glass{
+margin-bottom:20px;
+}
+
+footer{
+text-align:center;
+padding:40px;
+color:#999;
+}
+
+@media(max-width:768px){
+
+.hero-text h1{
+font-size:2.8rem;
+text-align:center;
+}
+
+.hero-text{
+text-align:center;
+}
+
+.profile{
+width:240px;
+height:240px;
+}
+
+nav ul{
+display:none;
+}
+}
+
+</style>
+</head>
+<body>
+
+<canvas id="particles"></canvas>
+
+<nav>
+<div class="logo">KJ</div>
+
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<section id="home">
+
+<div class="hero">
+
+<img src="profile.jpg" class="profile">
+
+<div class="hero-text">
+
+<h1>Hi, I'm <span>Kiran Jacob</span></h1>
+
+<div class="typing" id="typing"></div>
+
+<p>
+2nd Year Computer Science Engineering student at
+Toc H Institute of Science and Technology, Ernakulam.
+Passionate about Artificial Intelligence, Web Development,
+Programming and building innovative digital solutions.
+</p>
+
+<a href="#projects" class="btn">View Projects</a>
+
+</div>
+</div>
+
+</section>
+
+<section id="about">
+
+<h2>About Me</h2>
+
+<div class="glass">
+<p>
+I am an aspiring AI Developer and Software Engineer.
+I enjoy creating websites, learning new technologies,
+working on AI-based solutions and continuously improving
+my programming skills.
+</p>
+</div>
+
+</section>
+
+<section id="education">
+
+<h2>Education</h2>
+
+<div class="glass">
+<h3>B.Tech Computer Science Engineering</h3>
+<p>Toc H Institute of Science and Technology, Ernakulam</p>
+<p>Currently in 2nd Year</p>
+</div>
+
+</section>
+
+<section id="skills">
+
+<h2>Skills</h2>
+
+<div class="skills">
+
+<div class="glass">
+<h3>Python</h3>
+<div class="skill-bar">
+<div class="progress"><div style="width:85%"></div></div>
+</div>
+</div>
+
+<div class="glass">
+<h3>HTML & CSS</h3>
+<div class="skill-bar">
+<div class="progress"><div style="width:95%"></div></div>
+</div>
+</div>
+
+<div class="glass">
+<h3>C Programming</h3>
+<div class="skill-bar">
+<div class="progress"><div style="width:80%"></div></div>
+</div>
+</div>
+
+<div class="glass">
+<h3>C++</h3>
+<div class="skill-bar">
+<div class="progress"><div style="width:78%"></div></div>
+</div>
+</div>
+
+<div class="glass">
+<h3>Java</h3>
+<div class="skill-bar">
+<div class="progress"><div style="width:75%"></div></div>
+</div>
+</div>
+
+<div class="glass">
+<h3>Artificial Intelligence</h3>
+<div class="skill-bar">
+<div class="progress"><div style="width:70%"></div></div>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Achievements</h2>
+
+<div class="stats">
+
+<div class="glass stat">
+<h1>10+</h1>
+<p>Projects Built</p>
+</div>
+
+<div class="glass stat">
+<h1>6+</h1>
+<p>Programming Languages</p>
+</div>
+
+<div class="glass stat">
+<h1>2+</h1>
+<p>Years Learning Tech</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="projects">
+
+<h2>Projects</h2>
+
+<div class="glass">
+<h3>AI Development Project</h3>
+<p>
+Developing AI-powered applications and exploring
+Machine Learning, Automation and Intelligent Systems.
+</p>
+</div>
+
+<div class="glass">
+<h3>Portfolio Website</h3>
+<p>
+Designed and developed responsive personal portfolio websites
+using HTML, CSS and JavaScript.
+</p>
+</div>
+
+</section>
+
+<section>
+
+<h2>Journey</h2>
+
+<div class="timeline">
+
+<div class="glass">
+<h3>Started Programming</h3>
+<p>Learned C and Python fundamentals.</p>
+</div>
+
+<div class="glass">
+<h3>Web Development</h3>
+<p>Built responsive websites using HTML, CSS and JavaScript.</p>
+</div>
+
+<div class="glass">
+<h3>Artificial Intelligence</h3>
+<p>Currently exploring AI, Machine Learning and Automation.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h2>Contact</h2>
+
+<div class="glass">
+<p>Email: kiranjacob.107@gmail.com</p>
+<p>Phone: 8848925337</p>
+<p>GitHub: Kiran-jacob</p>
+</div>
+
+</section>
+
+<footer>
+© 2026 Kiran Jacob | Portfolio
+</footer>
+
+<script>
+
+const words=[
+"Future AI Engineer",
+"Web Developer",
+"Python Programmer",
+"Tech Enthusiast",
+"Computer Science Student"
+];
+
+let i=0,j=0,deleting=false;
+
+function type(){
+
+let word=words[i];
+
+if(!deleting){
+document.getElementById("typing").innerHTML=word.substring(0,j++);
+if(j>word.length){
+deleting=true;
+setTimeout(type,1000);
+return;
+}
+}
+else{
+document.getElementById("typing").innerHTML=word.substring(0,j--);
+if(j<0){
+deleting=false;
+i=(i+1)%words.length;
+}
+}
+
+setTimeout(type,deleting?50:100);
+}
+type();
+
+const canvas=document.getElementById("particles");
+const ctx=canvas.getContext("2d");
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+const particles=[];
+
+for(let i=0;i<120;i++){
+particles.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+r:Math.random()*2+1,
+dx:(Math.random()-0.5),
+dy:(Math.random()-0.5)
+});
+}
+
+function animate(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+particles.forEach(p=>{
+
+ctx.beginPath();
+ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+ctx.fillStyle="#00e5ff";
+ctx.fill();
+
+p.x+=p.dx;
+p.y+=p.dy;
+
+if(p.x<0||p.x>canvas.width)p.dx*=-1;
+if(p.y<0||p.y>canvas.height)p.dy*=-1;
+
+});
+
+requestAnimationFrame(animate);
+}
+
+animate();
+
+</script>
+
+</body>
+</html>
